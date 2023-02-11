@@ -92,7 +92,10 @@ public class FzLog {
         }
 
     }
-
+    
+    public void f(String format, Object... objs){
+        p(String.format(format, objs));
+    }
     public void p(String msg) {
         char c = msg.charAt(0);
         StringBuilder r = new StringBuilder();
