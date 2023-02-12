@@ -139,8 +139,8 @@ public class FzLog {
             case '=':
                 msg = msg.substring(1);
                 csz -= msg.length();
-                ind--;
-                rep(r, " ", ind);
+                if (last=='+') ind--;
+                rep(r, " ", ind-1);
                 rep(r, "=", csz + 2);
                 r.append(msg);
                 r.append("\n");
