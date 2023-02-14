@@ -9,9 +9,9 @@ import java.io.File;
  */
 public class FileUils {
     static public class ParsedFile{
-        String path="";
-        String name;
-        String ext="";
+        public String path="";
+        public String name;
+        public String ext="";
         public String toString(){
             return path+name+ext;
         }
