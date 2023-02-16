@@ -8,7 +8,7 @@ import java.io.File;
  * @author foxz
  */
 public class FileUils {
-    static public class ParsedFile{
+    static public class ParsedFileName{
         public String path="";
         public String name;
         public String ext="";
@@ -17,8 +17,8 @@ public class FileUils {
             return path+name+ext;
         }
     }
-    static public ParsedFile parseFile(String n){
-        ParsedFile res=new ParsedFile();
+    static public ParsedFileName parseFileName(String n){
+        ParsedFileName res=new ParsedFileName();
         n=dePosix(n);
         int y=n.lastIndexOf(File.separatorChar);        
         if (y>=0) {

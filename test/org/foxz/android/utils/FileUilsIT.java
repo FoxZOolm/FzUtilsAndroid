@@ -1,11 +1,11 @@
 package org.foxz.android.utils;
 
-import org.foxz.android.utils.FileUils.ParsedFile;
-import static org.foxz.android.utils.FileUils.parseFile;
+import org.foxz.android.utils.FileUils.ParsedFileName;
 import static org.foxz.android.utils.FileUils.pathLast;
 import static org.foxz.android.utils.FzLog.Fz;
 
 import org.junit.Test;
+import static org.foxz.android.utils.FileUils.parseFileName;
 
 /**
  *
@@ -35,25 +35,25 @@ public class FileUilsIT {
     @Test
     public void testParseFile() {
         Fz.p("# parseFile ");
-        ParsedFile res;
-        res = parseFile("testname");
+        ParsedFileName res;
+        res = parseFileName("testname");
         Fz.f(": \t<%s> %s [%s]", res.path, res.name, res.ext);
         assert (res.toString().equals("testname"));
-        res = parseFile("testname.ext");
+        res = parseFileName("testname.ext");
         Fz.f(": \t<%s> %s [%s]", res.path, res.name, res.ext);
         assert (res.name.equals("testname")
                 && res.ext.equals(".ext"));
-        res = parseFile("./testname.ext");
+        res = parseFileName("./testname.ext");
         Fz.f(": \t<%s> %s [%s]", res.path, res.name, res.ext);
         assert (res.name.equals("testname")
                 && res.ext.equals(".ext")
                 && res.path.equals("./"));
-        res = parseFile("//path1/path2/testname");
+        res = parseFileName("//path1/path2/testname");
         Fz.f(": \t<%s> %s [%s]", res.path, res.name, res.ext);
         assert (res.name.equals("testname")
                 && res.path.equals("//path1/path2/")
                 && res.ext.equals(""));
-        res = parseFile("//path1/path2/testname.four");
+        res = parseFileName("//path1/path2/testname.four");
         Fz.f(": \t<%s> %s [%s]", res.path, res.name, res.ext);
         assert (res.name.equals("testname")
                 && res.path.equals("//path1/path2/")
