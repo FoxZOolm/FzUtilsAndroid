@@ -12,6 +12,7 @@ public class FileUils {
         public String path="";
         public String name;
         public String ext="";
+        @Override
         public String toString(){
             return path+name+ext;
         }
